@@ -20,6 +20,7 @@ const userSchema = new mongoose.Schema({
     type: String,
     required: [true, "Please provide a valid email"],
     minlength: 8,
+    select: false,
   },
   confirmPassword: {
     type: String,
@@ -44,6 +45,8 @@ userSchema.pre("save", async function (next) {
   // Delete confirmed field
   this.confirmPassword = undefined;
 });
+
+userSchema.methods.correctPassword = function () {};
 
 const User = mongoose.model("User", userSchema);
 
