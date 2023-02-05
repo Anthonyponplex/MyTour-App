@@ -15,21 +15,20 @@ const DB = process.env.DATABASE.replace(
   process.env.DATABASE_PASSWORD
 );
 
-mongoose
-  .connect(DB, {})
-  .then(() => {
-    console.log("DB connection successful!");
-  })
-  .catch((err) => {
-    console.error(`Error connecting to the database. \n${err}`);
-  });
+mongoose.set("strictQuery", false);
+mongoose.connect(DB, {}).then(() => {
+  console.log("DB connection successful!");
+});
+// .catch((err) => {
+//   console.error(`Error connecting to the database. \n${err}`);
+// });
 
 const port = process.env.PORT || 3000;
-app.listen(port, () => {
+const server = app.listen(port, () => {
   console.log(`App running on port ${port} ....`);
 });
 
-process.on("uncaughtRejection", (err) => {
+process.on("unhandledRejection", (err) => {
   console.log("UNHANDLED REJECTION 💥 Shutting down....");
   console.log(err.name, err.message);
   server.close(() => {

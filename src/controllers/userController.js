@@ -1,6 +1,7 @@
 const User = require("./../model/userModel");
-const Tour = require("./../model/userModel");
+// const Tour = require("./../model/userModel");
 const catchAsync = require("./../utils/catchAsync");
+const AppError = require("./../utils/appError");
 
 exports.getAllUsers = catchAsync(async (req, res, next) => {
   const users = await User.find();

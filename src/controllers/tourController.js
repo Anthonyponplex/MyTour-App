@@ -65,13 +65,6 @@ exports.getAllTours = catchAsync(async (req, res, next) => {
     },
   });
 });
-//   try {
-// } catch (err) {
-//   res.status(404).json({
-//     status: "fail",
-//     message: err,
-//   });
-// }
 
 exports.createTour = catchAsync(async (req, res, next) => {
   const newTour = await Tour.create(req.body);
@@ -83,15 +76,6 @@ exports.createTour = catchAsync(async (req, res, next) => {
     },
   });
 });
-//   try {
-
-//   } catch (err) {
-//     res.status(400).json({
-//       status: "fail",
-//       message: err,
-//     });
-//   }
-// });
 
 exports.getTour = catchAsync(async (req, res, next) => {
   const tour = await Tour.findById(req.params.id);
@@ -107,13 +91,6 @@ exports.getTour = catchAsync(async (req, res, next) => {
     },
   });
 });
-// try {
-// } catch (err) {
-//   res.status(404).json({
-//     status: "fail",
-//     message: err,
-//   });
-// }
 
 exports.updateTour = catchAsync(async (req, res, next) => {
   const tour = await Tour.findByIdAndUpdate(req.params.id, req.body, {
@@ -241,10 +218,3 @@ exports.getMonthlyPlan = catchAsync(async (req, res, next) => {
     },
   });
 });
-//   try {
-// } catch (err) {
-//   res.status(404).json({
-//     status: "fail",
-//     message: err,
-//   });
-// }

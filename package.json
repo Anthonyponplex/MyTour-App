@@ -1,26 +1,32 @@
 {
-  "name": "mongodb-crud",
+  "name": "my-tour-app",
   "version": "1.0.0",
-  "description": "Tour App",
+  "description": "",
   "main": "app.js",
   "scripts": {
     "start": "nodemon server.js",
     "start:prod": "NODE_ENV=production nodemon server.js",
     "debug": "ndb server.js"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Anthonyponplex/MyTour-App.git"
+  },
   "keywords": [],
-  "author": "",
+  "author": "Mayaki Tubosun",
   "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Anthonyponplex/MyTour-App/issues"
+  },
+  "homepage": "https://github.com/Anthonyponplex/MyTour-App#readme",
   "dependencies": {
-    "bcrypt": "^5.1.0",
     "bcryptjs": "^2.4.3",
     "dotenv": "^16.0.3",
     "express": "^4.18.2",
     "jsonwebtoken": "^9.0.0",
-    "loader": "^2.1.1",
-    "mongoose": "^6.7.3",
+    "mongoose": "^6.9.0",
     "morgan": "^1.10.0",
-    "ndb": "^1.1.5",
+    "nodemailer": "^6.9.1",
     "nodemon": "^2.0.20",
     "slugify": "^1.6.5",
     "validator": "^13.7.0"
